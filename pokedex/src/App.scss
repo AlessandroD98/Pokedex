@@ -1,0 +1,39 @@
+body {
+  background-color: orangered;
+}
+
+.CardContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  border-radius: 5px;
+  width: 250px;
+  height: 250px;
+  h1 {
+    font-size: 1.2em;
+  }
+}
+
+.HeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  h1 {
+    color: white;
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    color: white;
+  }
+  .icon {
+    font-size: 2em;
+  }
+  span {
+    @media screen and (max-width: 700px) {
+      display: none;
+    }
+  }
+}

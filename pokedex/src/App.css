@@ -1,0 +1,39 @@
+body {
+  background-color: orangered;
+}
+
+.CardContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  border-radius: 5px;
+  width: 250px;
+  height: 250px;
+}
+.CardContainer h1 {
+  font-size: 1.2em;
+}
+
+.HeaderContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.HeaderContainer h1 {
+  color: white;
+}
+.HeaderContainer button {
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+.HeaderContainer .icon {
+  font-size: 2em;
+}
+@media screen and (max-width: 700px) {
+  .HeaderContainer span {
+    display: none;
+  }
+}/*# sourceMappingURL=App.css.map */
