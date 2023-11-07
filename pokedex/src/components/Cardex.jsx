@@ -1,8 +1,8 @@
-import { Col, Spinner } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { useGetPokemon } from "../hooks/useGetPokemon";
 import Loader from "./Loader";
 
-export const Cardex = ({ pokemon, num }) => {
+export const Cardex = ({ pokemon }) => {
   const [loading, error, infoPokemon] = useGetPokemon(pokemon.url);
 
   return (

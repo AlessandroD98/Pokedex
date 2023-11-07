@@ -1,7 +1,7 @@
 import { Container, Row } from "react-bootstrap";
 import { useGetData } from "../hooks/useGetData";
 import { Cardex } from "./Cardex";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
 import Loader from "./Loader";
 import { useSelector } from "react-redux";
@@ -41,7 +41,7 @@ export const Home = () => {
       </Row>
       <Row>
         {!loading ? (
-          pokemons && pokemons.map((pokemon, i) => <Cardex pokemon={pokemon} key={pokemon.name} num={i} />)
+          pokemons && pokemons.map((pokemon, i) => <Cardex pokemon={pokemon} key={pokemon.name} />)
         ) : (
           <Loader />
         )}
