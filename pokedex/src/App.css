@@ -12,6 +12,10 @@ body {
   border-radius: 5px;
   width: 250px;
   height: 250px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.CardContainer:hover {
+  cursor: pointer;
 }
 .CardContainer h1 {
   font-size: 1.2em;

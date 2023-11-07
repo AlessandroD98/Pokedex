@@ -25,6 +25,7 @@ export const useGetData = (offset) => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offset]);
 
   return [loading, error];

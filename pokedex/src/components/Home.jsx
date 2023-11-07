@@ -5,6 +5,7 @@ import { useState } from "react";
 import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
 import Loader from "./Loader";
 import { useSelector } from "react-redux";
+import { PokemonCard } from "./PokemonCard";
 
 export const Home = () => {
   const [offset, setOffset] = useState(0);
@@ -41,7 +42,11 @@ export const Home = () => {
       </Row>
       <Row>
         {!loading ? (
-          pokemons && pokemons.map((pokemon, i) => <Cardex pokemon={pokemon} key={pokemon.name} />)
+          pokemons &&
+          pokemons.map(
+            (pokemon, index) => <PokemonCard pokemon={pokemon} key={pokemon.name} index={index} />
+            // <Cardex pokemon={pokemon} key={pokemon.name} index={index} />
+          )
         ) : (
           <Loader />
         )}
