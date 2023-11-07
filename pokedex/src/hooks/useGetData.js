@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { savePokemons } from "../features/pokemonSlice";
 
 export const useGetData = (offset) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [pokemons, setPokemons] = useState([]);
+  // const [pokemons, setPokemons] = useState([]);
+  const dispatch = useDispatch();
 
   const fetchData = async () => {
     try {
       const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`);
       const data = await res.json();
-      setPokemons(data.results);
+      dispatch(savePokemons(data.results));
+      // setPokemons(data.results);
       setLoading(false);
       //   console.log(data)
     } catch (e) {
@@ -21,7 +25,7 @@ export const useGetData = (offset) => {
 
   useEffect(() => {
     fetchData();
-  }, [pokemons]);
+  }, [offset]);
 
-  return [loading, error, pokemons];
+  return [loading, error];
 };

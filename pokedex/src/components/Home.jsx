@@ -1,14 +1,16 @@
-import { Container, Row, Spinner } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { useGetData } from "../hooks/useGetData";
 import { Cardex } from "./Cardex";
 import { useEffect, useState } from "react";
 import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
 import Loader from "./Loader";
+import { useSelector } from "react-redux";
 
 export const Home = () => {
   const [offset, setOffset] = useState(0);
-  const [loading, error, pokemons] = useGetData(offset);
-  console.log(pokemons);
+  const [loading, error] = useGetData(offset);
+  // console.log(pokemons);
+  const pokemons = useSelector((state) => state.pokemon.pokemons);
 
   const handleClickLeft = () => {
     if (offset === 0) {
